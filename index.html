@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maskha Creative | Official Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS TAMPILAN (Sama seperti Aurora Dynamic, tapi lebih rapi) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+
+        body {
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Background Bergerak Misterius */
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            padding: 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* FOTO PROFIL */
+        .profile-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Efek Cincin Berputar */
+        .ring {
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border-radius: 50%;
+            border-top: 2px solid #00d2ff;
+            border-right: 2px solid transparent;
+            animation: spinRing 4s linear infinite;
+        }
+        
+        .ring:nth-child(2) {
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-top: 2px solid #928dab;
+            border-right: 2px solid transparent;
+            animation: spinRing 6s linear infinite reverse;
+        }
+
+        @keyframes spinRing { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* TEKS */
+        h1 { font-size: 1.8rem; margin-bottom: 5px; font-weight: 700; letter-spacing: 1px; }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ccc;
+        }
+
+        .bio { font-size: 0.95rem; color: #aaa; margin-bottom: 30px; line-height: 1.6; }
+
+        /* TOMBOL MENU */
+        .links { display: flex; flex-direction: column; gap: 12px; }
+
+        .btn {
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ikon kiri, panah kanan */
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .btn-content { display: flex; align-items: center; gap: 15px; }
+        .btn i { font-size: 1.2rem; width: 25px; text-align: center; }
+
+        /* Warna Ikon Spesifik */
+        .fa-book { color: #4facfe; }      /* Biru untuk Edukasi */
+        .fa-campground { color: #ff9a9e; } /* Pink/Merah untuk Pramuka */
+        .fa-paint-brush { color: #fbc2eb; } /* Ungu untuk Desain */
+        .fa-coffee { color: #e0c3fc; }    /* Coklat/Gold untuk Kopi */
+        .fa-whatsapp { color: #25d366; }  /* Hijau WA */
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        footer { margin-top: 40px; font-size: 0.8rem; color: #555; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="profile-container">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <img src="https://source.unsplash.com/random/200x200/?man,dark,portrait" alt="Maskha" class="profile-img">
+        </div>
+
+        <h1>Maskha Creative</h1>
+        <div class="badge">Medan, Indonesia</div>
+        
+        <p class="bio">
+            Guru Bahasa Arab, Desainer, & Penikmat Kopi.<br>
+            <i>"Membangun pendidikan dengan hati, berkarya dengan rasa."</i>
+        </p>
+
+        <div class="links">
+            
+            <a href="#" class="btn" onclick="alert('Link ke Google Drive RPP/Materi kamu')">
+                <div class="btn-content">
+                    <i class="fas fa-book"></i>
+                    <span>Materi & RPP Bahasa Arab (7-9)</span>
+                </div>
+                <i class="fas fa-chevron-right" style="font-size: 0.8rem; opacity: 0.5;"></i>
+            </a>
+
+            <a href="#" class="btn" onclick="alert('Link ke Info Pramuka/Sekolah Darma Pertiwi')">
+                <div class="btn-content">
+                    <i class="fas fa-campground"></i>
+                    <span>Info Pramuka & Sekolah</span>
+                </div>
+                <i class="fas fa-chevron-right" style="font-size: 0.8rem; opacity: 0.5;"></i>
+            </a>
+
+            <a href="#" class="btn" onclick="alert('Link ke Portfolio Desain kamu')">
+                <div class="btn-content">
+                    <i class="fas fa-paint-brush"></i>
+                    <span>Jasa Desain Simple (Canva)</span>
+                </div>
+                <i class="fas fa-chevron-right" style="font-size: 0.8rem; opacity: 0.5;"></i>
+            </a>
+
+            <a href="#" class="btn" onclick="alert('Link ke Cerita Kopi/Blog')">
+                <div class="btn-content">
+                    <i class="fas fa-coffee"></i>
+                    <span>Barista & Cerita Kopi</span>
+                </div>
+                <i class="fas fa-chevron-right" style="font-size: 0.8rem; opacity: 0.5;"></i>
+            </a>
+
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 5px 0;">
+
+            <a href="https://wa.me/6281234567890" class="btn">
+                <div class="btn-content">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Hubungi Saya (WhatsApp)</span>
+                </div>
+                <i class="fas fa-external-link-alt" style="font-size: 0.8rem; opacity: 0.5;"></i>
+            </a>
+        </div>
+
+        <footer>
+            &copy; 2024 Project Web Saya.
+        </footer>
+    </div>
+
+</body>
+              </html>
+              
